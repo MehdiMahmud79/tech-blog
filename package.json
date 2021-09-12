@@ -4,7 +4,9 @@
   "description": "CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well which deployed to Heroku.",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "start": "node server.js",
+    "seed": "node seeds/seed.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,8 @@
     "express-session": "^1.17.2",
     "mysql2": "^2.3.0",
     "path": "^0.12.7",
-    "sequelize": "^6.6.5"
+    "sequelize": "^6.6.5",
+    "nodemon": "^2.0.12"
   },
   "devDependencies": {
     "eslint": "^7.12.1",
