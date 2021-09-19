@@ -1,0 +1,26 @@
+
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h2 class="text-center mb-3"><i class="fas fa-sign-in-alt text-danger"></i> Update Post</h2>
+
+<form class="login-form">
+  <div class="invisible" id="post-id">{{post.id}}</div>
+  <div class="mb-2">
+    
+    <label for="title" class="form-label" >Title</label>
+    <textarea type="text" class="form-control" id="post-title" >{{post.title}}</textarea>
+  </div> 
+  <div class="mb-2">
+    <label for="content" class="form-label">Content</label>
+    <textarea type="text" class="form-control my-3" id="post-content">{{post.content}}</textarea>
+  
+
+  <button id="updatePost" type="submit" class="btn btn-warning"><i class="fas fa-plus-circle"> Submit Changes</i></button>
+  <button id="deletePost" type="submit" class="btn btn-danger float-end"><i class="fas fa-trash-alt"> Delete Post</i></button>
+
+</form>
+    </div>
+  </div>
+</div>
+  

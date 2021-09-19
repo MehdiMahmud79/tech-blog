@@ -1,9 +1,11 @@
 const router = require("express").Router();
 const { User } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body);
+    console.log(" created user is ", userData);
 
     req.session.save(() => {
       req.session.user_id = userData.id;
@@ -17,6 +19,7 @@ router.post("/", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
+  console.log("i am in login api");
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
@@ -35,7 +38,7 @@ router.post("/login", async (req, res) => {
         .json({ message: "Incorrect email or password, please try again" });
       return;
     }
-    console.log("\n the user is\n", userData);
+    console.log("\nuser is\n", userData.userName);
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.userName = userData.userName;
@@ -57,5 +60,6 @@ router.post("/logout", (req, res) => {
     res.status(404).end();
   }
 });
+
 
 module.exports = router;

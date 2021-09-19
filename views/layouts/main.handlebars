@@ -7,30 +7,35 @@
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
    
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Tech Blog</title>
 </head>
   <body>
     
   <div class="flex-column justify-space-around">
  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-  <a class="navbar-brand mx-3" href="/">
+  <a class="btn navbar-brand mx-3" href="/">
     <img src="/images/logo.png" width="200"  alt="logo">
   </a>
 
   <ul class="nav justify-content-end fs-5 mx-3">
 {{#if logged_in}}
-  <li class="nav-item ">
-    <a class="nav-link active .text-black-50" href="/profile">profile</a>
+     <li class="nav-item">
+    <a class="btn nav-link text-danger" href="/"><i class="fas fa-home"></i></a>
   </li>
+  <li class="nav-item ">
+    <a class="btn nav-link active .text-black-50" href="/profile"><i class="fas fa-id-card"></i> Profile</a>
+  </li>
+
    <li class="nav-item">
-    <a class="nav-link" id= "logout" href="#">Logout</a>
+    <a class="btn nav-link" id= "logout" href="/"><i class="fas fa-sign-out-alt"></i> Logout</a>
   </li>
   {{else}}
   <li class="nav-item">
-    <a class="nav-link" href="/login">login</a>
+    <a class="btn nav-link" href="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/register">register</a>
+    <a class="btn nav-link" href="/register"><i class="fas fa-user-plus"></i> Register</a>
   </li>
  
   {{/if}}
@@ -38,18 +43,14 @@
   
 </ul>
 </nav>
-{{#if logged_in}}
-<div class="alert alert-danger" role="alert">
-  <h1 class="fs-4"><i class='fas fa-user-check' style='font-size:28px;color:red'></i> {{userName}}</h1>
-  
-</div>
-{{/if}}
+
+
     <main class="container container mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
     <footer>
-      
+ 
     </footer>
   </div>
     <script
@@ -65,10 +66,8 @@
   
     ></script>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+<script src="/js/script.js"></script>
+ 
 </body>
 
 </html>
