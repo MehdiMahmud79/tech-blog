@@ -1,17 +1,10 @@
-# TechBlog
-CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts.
-
-
-## User Story
-
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# ORM: E-Commerce-BackEnd
+# ORM: tech-blog
 
-![badmath](https://img.shields.io/github/issues/MehdiMahmud79/E-Commerce-BackEnd)
-![badmath](https://img.shields.io/github/forks/MehdiMahmud79/E-Commerce-BackEnd)
-![badmath](https://img.shields.io/github/stars/MehdiMahmud79/E-Commerce-BackEnd)
+![badmath](https://img.shields.io/github/issues/MehdiMahmud79/tech-blog)
+![badmath](https://img.shields.io/github/forks/MehdiMahmud79/tech-blog)
+![badmath](https://img.shields.io/github/stars/MehdiMahmud79/tech-blog)
 
 # Table of Contents 
 
@@ -25,8 +18,7 @@ CMS-style blog site similar to a Wordpress site, where developers can publish th
 ## 📝
 ## Description 
 
-Internet retail, also known as **e-commerce**, is the largest sector of the electronics industry. This application is to interact with MySQL database Using Sequelize in Express.js.
-
+CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts.
 
 ## 🚀
 ## Mock-Up
@@ -53,12 +45,17 @@ npm i
 
 ### this will install the following dependencies 
 ```bash
-  "dependencies": {
+"dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.2",
     "mysql2": "^2.3.0",
-    "nodemon": "^2.0.12",
-    "sequelize": "^5.22.4"
+    "path": "^0.12.7",
+    "sequelize": "^6.6.5",
+    "nodemon": "^2.0.12"
   }
 
 ```
@@ -82,8 +79,8 @@ or
 
 
 ## Websites
-* Github: https://github.com/MehdiMahmud79/E-Commerce-BackEnd
-* Live: https://mehdimahmud79.github.io/E-Commerce-BackEnd/
+* Github: https://github.com/MehdiMahmud79/tech-blog
+* Live: https://mehdimahmud79.github.io/tech-blog/
 
 
 
