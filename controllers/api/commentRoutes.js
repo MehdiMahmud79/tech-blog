@@ -17,15 +17,15 @@ router.post("/", withAuth, async (req, res) => {
 
 router.get("/:id", withAuth, async (req, res) => {
   try {
-    const postById = await Comment.findOne({
+    const commentById = await Comment.findOne({
       where: {
         id: req.params.id,
       },
       attributes: ["id", "title", "content", "date_created"],
       include: [
         {
-          model: Comment,
-          attributes: ["id", "content", "post_id", "user_id", "date_created"],
+          model: Post,
+          attributes: ["id", "content", "user_id", "date_created"],
           include: {
             model: User,
             attributes: ["userName"],
@@ -33,7 +33,7 @@ router.get("/:id", withAuth, async (req, res) => {
         },
         {
           model: User,
-          attributes: ["userName"],
+          attributes: ["userName, id"],
         },
       ],
     });
@@ -55,7 +55,7 @@ router.get("/:id", withAuth, async (req, res) => {
 
 router.delete("/:id", withAuth, async (req, res) => {
   try {
-    const postData = await Post.destroy({
+    const postData = await Comment.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
@@ -73,18 +73,4 @@ router.delete("/:id", withAuth, async (req, res) => {
   }
 });
 
-router.post("/new-post", withAuth, async (req, res) => {
-  try {
-    const newPost = await Post.create({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
-    console.log(newPost);
-
-    res.status(200).json(newPost);
-  } catch (err) {
-    console.log(err);
-    res.status(400).json(err);
-  }
-});
 module.exports = router;

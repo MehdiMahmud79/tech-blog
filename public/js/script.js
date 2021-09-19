@@ -76,6 +76,7 @@ const updatePost = async (event) => {
   const title = $("#post-title").val().trim();
   const content = $("#post-content").val().trim();
   const id = parseInt($("#post-id").text().trim());
+  console.log(title, content, id);
   event.preventDefault();
   if (title && content) {
     // Send a POST request to the API endpoint

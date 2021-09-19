@@ -32,7 +32,7 @@ The following animation show a mock-up of the app and functionality:
 ### Youtube videos to demonstrate the project
 🔴📺
 
-* [📹 YouTube video for installing the app.](https://youtu.be/MN-CRUqIAGI)
+* [📹 YouTube video for installing the app.](https://youtu.be/9dsqo-P7hzA)
 
 * [📹 YouTube video for App. functionality](https://youtu.be/7Pg9gin8lWo)
 
