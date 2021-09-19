@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+   
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <title>Tech Blog</title>
+</head>
+  <body>
+    
+  <div class="flex-column justify-space-around">
+ <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand mx-3" href="/">
+    <img src="/images/logo.png" width="200"  alt="logo">
+  </a>
+
+  <ul class="nav justify-content-end fs-5 mx-3">
+{{#if logged_in}}
+  <li class="nav-item ">
+    <a class="nav-link active .text-black-50" href="/profile">profile</a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" id= "logout" href="#">Logout</a>
+  </li>
+  {{else}}
+  <li class="nav-item">
+    <a class="nav-link" href="/login">login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/register">register</a>
+  </li>
+ 
+  {{/if}}
+ 
+  
+</ul>
+</nav>
+{{#if logged_in}}
+<div class="alert alert-danger" role="alert">
+  <h1 class="fs-4"><i class='fas fa-user-check' style='font-size:28px;color:red'></i> {{userName}}</h1>
+  
+</div>
+{{/if}}
+    <main class="container container mt-5">
+      <!-- Render the sub layout -->
+      {{{ body }}}
+    </main>
+    <footer>
+      
+    </footer>
+  </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    
+    ></script>
+    <script
+      src="/js/bootstrap.min.js"
+  
+    ></script>
+
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
