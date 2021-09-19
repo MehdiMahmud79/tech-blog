@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# ORM: tech-blog
+# MVC: tech-blog
 
 ![badmath](https://img.shields.io/github/issues/MehdiMahmud79/tech-blog)
 ![badmath](https://img.shields.io/github/forks/MehdiMahmud79/tech-blog)
