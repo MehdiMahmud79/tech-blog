@@ -1,0 +1,23 @@
+<div class="container bg-success px-2">
+ <div class="card my-2">
+  <div class="card-header "><span >  
+    <button type="button" class="btn btn-success position-relative">
+  <i class="fa fa-user" aria-hidden="true"></i> {{post.user.userName}}
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+     ID : {{post.id}}
+    <span class="visually-hidden"></span>
+  </span>
+</button>
+    </span>   <span class=" text-info font-weight-bold float-right">{{ format_date post.date_created}}</span> </div>
+  <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+    <p class="card-text">{{post.content}}</p>
+  </div>
+<h3 class="fs-3 text-danger px-3">Comments</h3>
+  {{#each post.comments as |cmnt| }}
+{{> comment }}
+{{/each}}
+
+
+</div> 
+</div>

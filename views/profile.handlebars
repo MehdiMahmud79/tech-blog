@@ -1,0 +1,12 @@
+<ol class="list-group ">
+  {{#each blogPosts as |post|}}
+
+  <li class="list-group-item my-3 bg-dark">
+    {{> post-info post }}
+  <i class="fas fa-comment text-warning fs-3"></i>
+    {{#each post.comments as |cmnt| }}
+{{> comment cmnt}}
+{{/each}}
+</li>
+  {{/each}}
+</ol>

@@ -1,43 +1,43 @@
 [
   {
     "content": "yes i totally agree",
-    "user_id": 1,
-    "post_id": 1
+    "post_id": 1,
+    "user_id": 2
   },
   {
     "content": "Pillar  allowing you to establish yourself as an authority in your industry.",
-    "user_id": 1,
-    "post_id": 2
+    "post_id": 2,
+    "user_id": 1
   },
   {
     "content": "Reviews are often used by personal bloggers as a form of affiliate marketing.",
-    "user_id": 1,
-    "post_id": 2
+    "post_id": 3,
+    "user_id": 4
   },
   {
     "content": "Shared web hosting is often the most affordable option. ",
-    "user_id": 2,
-    "post_id": 1
+    "post_id": 3,
+    "user_id": 4
   },
   {
     "content": "If your blog starts attracting thousands of visitors per week, you may need to upgrade to dedicated server hosting or VPS hosting.",
-    "user_id": 3,
-    "post_id": 1
+    "post_id": 5,
+    "user_id": 3
   },
 
   {
     "content": "If you plan on publishing new content twice per week, create four to six blog posts and mark their publication dates on an editorial calendar.",
-    "user_id": 4,
-    "post_id": 1
+    "post_id": 1,
+    "user_id": 3
   },
   {
     "content": "Consistency is often more important compared to frequency.",
-    "user_id": 4,
-    "post_id": 1
+    "post_id": 2,
+    "user_id": 1
   },
   {
     "content": "An editorial calendar allows you to keep your schedule organized, assign tasks to writers or editors, and come up with ideas for new posts.",
-    "user_id": 4,
-    "post_id": 1
+    "post_id": 4,
+    "user_id": 2
   }
 ]

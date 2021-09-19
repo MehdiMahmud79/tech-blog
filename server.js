@@ -11,10 +11,11 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 app.set("port", PORT);
 // Set up Handlebars.js engine
-// const hbs = exphbs.create({});
+const hbs = exphbs.create({ helpers });
+app.use(express.static(path.join(__dirname, "public")));
+
 // Inform Express.js on which template engine to use
-app.set("views", path.join(__dirname, "public", "hbsTamplate"));
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 const sess = {
   name: "session",
@@ -33,7 +34,6 @@ app.use(session(sess));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
 app.use(routes);
 
 // sync sequelize models to the database, then turn on the server
