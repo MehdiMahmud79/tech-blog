@@ -34,7 +34,7 @@ The following animation show a mock-up of the app and functionality:
 
 * [📹 YouTube video for installing the app.](https://youtu.be/9dsqo-P7hzA)
 
-* [📹 YouTube video for App. functionality](https://youtu.be/7Pg9gin8lWo)
+* [📹 YouTube video for App. functionality](https://youtu.be/Inq1qAglcDo)
 
 ## 🛠️ 
 ##  Installation
