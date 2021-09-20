@@ -85,6 +85,10 @@ const addNewPost = async (event) => {
       $("#alertMessage span").text(response.statusText);
       return;
     }
+  } else {
+    $("#alertMessage").addClass("show");
+    $("#alertMessage span").text(" Post title or content can't be empty");
+    return;
   }
 };
 const updatePost = async (event) => {
@@ -109,6 +113,10 @@ const updatePost = async (event) => {
       $("#alertMessage span").text(response.statusText);
       return;
     }
+  } else {
+    $("#alertMessage").addClass("show");
+    $("#alertMessage span").text("Title or content can't be empty");
+    return;
   }
 };
 const deletePost = async (event) => {
@@ -159,10 +167,14 @@ const addComment = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace("/");
     } else {
-      a$("#alertMessage").addClass("show");
+      $("#alertMessage").addClass("show");
       $("#alertMessage span").text(response.statusText);
       return;
     }
+  } else {
+    $("#alertMessage").addClass("show");
+    $("#alertMessage span").text("content can't be empty");
+    return;
   }
 };
 
