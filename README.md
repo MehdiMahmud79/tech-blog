@@ -41,7 +41,6 @@ The following animation show a mock-up of the app and functionality:
 ```bash
 npm i
 ```
-![📹 Installation using command line.](./assets/screen.gif)
 
 ### this will install the following dependencies 
 ```bash
@@ -82,7 +81,6 @@ or
 * Github: https://github.com/MehdiMahmud79/tech-blog
 * Live: https://mehdimahmud79.github.io/tech-blog/
 * Heroku: https://techbloguk.herokuapp.com/
-
 
 ---
 © 2021 Mehdi Mahmud
