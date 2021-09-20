@@ -35,12 +35,18 @@ const signupFormHandler = async (event) => {
   const email = $("#email-signup").val().trim();
   const password = $("#password-signup").val().trim();
   const password2 = $("#password-signup2").val().trim();
-  if (password !== password2) {
-    // alert("passwords should match!");
-    $("#alertMessage").addClass("show");
-    $("#alertMessage span").text("Password shoud mach");
-    return;
-  }
+if (!userName || !email || !password | !password2) {
+  $("#alertMessage").addClass("show");
+  $("#alertMessage span").text("Fields can't be empty");
+
+  return;
+}
+if (password !== password2) {
+  // alert("passwords should match!");
+  $("#alertMessage").addClass("show");
+  $("#alertMessage span").text("Password shoud match");
+  return;
+}
   if (password.length < 8) {
     // alert("passwords should match!");
     $("#alertMessage").addClass("show");
