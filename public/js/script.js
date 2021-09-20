@@ -13,15 +13,18 @@ const loginFormHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
 
+    resMessage = await response.json();
     if (response.ok) {
-      // If successful, redirect the browser to the profile page
       document.location.replace("/");
     } else {
-      alert(response.statusText);
+      $("#alertMessage").addClass("show");
+      $("#alertMessage span").text(resMessage.message);
+      return;
     }
     return;
   }
-  console.log("fill in the requiered form");
+  $("#alertMessage").addClass("show");
+  $("#alertMessage span").text("Error: fill in requiered fileds");
   return;
 };
 
@@ -33,7 +36,15 @@ const signupFormHandler = async (event) => {
   const password = $("#password-signup").val().trim();
   const password2 = $("#password-signup2").val().trim();
   if (password !== password2) {
-    alert("passwords should match!");
+    // alert("passwords should match!");
+    $("#alertMessage").addClass("show");
+    $("#alertMessage span").text("Password shoud mach");
+    return;
+  }
+  if (password.length < 8) {
+    // alert("passwords should match!");
+    $("#alertMessage").addClass("show");
+    $("#alertMessage span").text("Password should be >8 characters");
     return;
   }
   if (userName && email && password && password2) {
@@ -42,11 +53,13 @@ const signupFormHandler = async (event) => {
       body: JSON.stringify({ userName, email, password }),
       headers: { "Content-Type": "application/json" },
     });
-
+    resMessage = await response.json();
     if (response.ok) {
       document.location.replace("/profile");
     } else {
-      alert(response.statusText);
+      $("#alertMessage").addClass("show");
+      $("#alertMessage span").text(resMessage.message);
+      return;
     }
   }
 };
@@ -68,7 +81,9 @@ const addNewPost = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace("/profile");
     } else {
-      alert(response.statusText);
+      $("#alertMessage").addClass("show");
+      $("#alertMessage span").text(response.statusText);
+      return;
     }
   }
 };
@@ -90,7 +105,9 @@ const updatePost = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace("/profile");
     } else {
-      alert(response.statusText);
+      $("#alertMessage").addClass("show");
+      $("#alertMessage span").text(response.statusText);
+      return;
     }
   }
 };
@@ -104,7 +121,9 @@ const deletePost = async (event) => {
     // If successful, redirect the browser to the profile page
     document.location.replace("/profile");
   } else {
-    alert(response.statusText);
+    $("#alertMessage").addClass("show");
+    $("#alertMessage span").text(response.statusText);
+    return;
   }
 };
 const logout = async () => {
@@ -116,7 +135,9 @@ const logout = async () => {
   if (response.ok) {
     document.location.replace("/");
   } else {
-    alert(response.statusText);
+    $("#alertMessage").addClass("show");
+    $("#alertMessage span").text(response.statusText);
+    return;
   }
 };
 
@@ -138,7 +159,9 @@ const addComment = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace("/");
     } else {
-      alert(response.statusText);
+      a$("#alertMessage").addClass("show");
+      $("#alertMessage span").text(response.statusText);
+      return;
     }
   }
 };

@@ -2,11 +2,13 @@ const router = require("express").Router();
 const { User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+// creat /register a new user
 router.post("/", async (req, res) => {
   try {
+    const userToCheck = await User.findOne({ where: { email: req.body.email } });
+       
+    if(userToCheck){res.status(400).json({ message: `Email: ${req.body.email} is registered already!` }); return}
     const userData = await User.create(req.body);
-    console.log(" created user is ", userData);
-
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
