@@ -1,7 +1,14 @@
-console.log("script is ready");
+const errHandler = (message) => {
+  $("#alertMessage").empty();
+  errMessage = ` <div id="alertMessage" class="alert alert-warning alert-dismissible fade show " role="alert">
+  <strong><i class="fas fa-exclamation-triangle"></i></strong> <span>${message}</span> 
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>`;
+  $("#alertMessage").append(message);
+  return;
+};
 const loginFormHandler = async (event) => {
   event.preventDefault();
-
   // Collect values from the login form
   const email = $("#email-login").val().trim();
   const password = $("#password-login").val().trim();
@@ -17,40 +24,33 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      $("#alertMessage").addClass("show");
-      $("#alertMessage span").text(resMessage.message);
+      errHandler(resMessage.message);
+
       return;
     }
     return;
   }
-  $("#alertMessage").addClass("show");
-  $("#alertMessage span").text("Error: fill in requiered fileds");
+  errHandler("Error: fill in requiered fileds!");
+
   return;
 };
 
 const signupFormHandler = async (event) => {
   event.preventDefault();
-
   const userName = $("#name-signup").val().trim();
   const email = $("#email-signup").val().trim();
   const password = $("#password-signup").val().trim();
   const password2 = $("#password-signup2").val().trim();
-if (!userName || !email || !password | !password2) {
-  $("#alertMessage").addClass("show");
-  $("#alertMessage span").text("Fields can't be empty");
-
-  return;
-}
-if (password !== password2) {
-  // alert("passwords should match!");
-  $("#alertMessage").addClass("show");
-  $("#alertMessage span").text("Password shoud match");
-  return;
-}
+  if (!userName || !email || !password | !password2) {
+    errHandler("Error: fill in requiered fileds");
+    return;
+  }
+  if (password !== password2) {
+    errHandler("Error: Password should match!");
+    return;
+  }
   if (password.length < 8) {
-    // alert("passwords should match!");
-    $("#alertMessage").addClass("show");
-    $("#alertMessage span").text("Password should be >8 characters");
+    errHandler("Error: Password should be at least 8 characters!");
     return;
   }
   if (userName && email && password && password2) {
@@ -63,8 +63,7 @@ if (password !== password2) {
     if (response.ok) {
       document.location.replace("/profile");
     } else {
-      $("#alertMessage").addClass("show");
-      $("#alertMessage span").text(resMessage.message);
+      errHandler(resMessage.message);
       return;
     }
   }
@@ -87,13 +86,11 @@ const addNewPost = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace("/profile");
     } else {
-      $("#alertMessage").addClass("show");
-      $("#alertMessage span").text(response.statusText);
+      errHandler(response.statusText);
       return;
     }
   } else {
-    $("#alertMessage").addClass("show");
-    $("#alertMessage span").text(" Post title or content can't be empty");
+    errHandler("Post title or content can't be empty!");
     return;
   }
 };
@@ -115,13 +112,11 @@ const updatePost = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace("/profile");
     } else {
-      $("#alertMessage").addClass("show");
-      $("#alertMessage span").text(response.statusText);
+      errHandler(response.statusText);
       return;
     }
   } else {
-    $("#alertMessage").addClass("show");
-    $("#alertMessage span").text("Title or content can't be empty");
+    errHandler("Title or content can't be empty!");
     return;
   }
 };
@@ -135,8 +130,7 @@ const deletePost = async (event) => {
     // If successful, redirect the browser to the profile page
     document.location.replace("/profile");
   } else {
-    $("#alertMessage").addClass("show");
-    $("#alertMessage span").text(response.statusText);
+    errHandler(response.statusText);
     return;
   }
 };
@@ -149,8 +143,7 @@ const logout = async () => {
   if (response.ok) {
     document.location.replace("/");
   } else {
-    $("#alertMessage").addClass("show");
-    $("#alertMessage span").text(response.statusText);
+    errHandler(response.statusText);
     return;
   }
 };
@@ -173,13 +166,12 @@ const addComment = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace("/");
     } else {
-      $("#alertMessage").addClass("show");
-      $("#alertMessage span").text(response.statusText);
+      errHandler(response.statusText);
       return;
     }
   } else {
-    $("#alertMessage").addClass("show");
-    $("#alertMessage span").text("content can't be empty");
+    errHandler("content can't be empty!");
+
     return;
   }
 };
