@@ -4,7 +4,7 @@ const errHandler = (message) => {
   <strong><i class="fas fa-exclamation-triangle"></i></strong> <span>${message}</span> 
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>`;
-  $("#alertMessage").append(message);
+  $("#alertMessage").append(errMessage);
   return;
 };
 const loginFormHandler = async (event) => {
@@ -30,7 +30,7 @@ const loginFormHandler = async (event) => {
     }
     return;
   }
-  errHandler("Error: fill in requiered fileds!");
+  errHandler("Error: Fill in the requiered fileds!");
 
   return;
 };
@@ -42,7 +42,7 @@ const signupFormHandler = async (event) => {
   const password = $("#password-signup").val().trim();
   const password2 = $("#password-signup2").val().trim();
   if (!userName || !email || !password | !password2) {
-    errHandler("Error: fill in requiered fileds");
+    errHandler("Error: Fill in the requiered fileds");
     return;
   }
   if (password !== password2) {
