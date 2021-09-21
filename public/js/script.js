@@ -7,10 +7,13 @@ const errHandler = (message) => {
   $("#alertMessage").append(errMessage);
   return;
 };
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 const loginFormHandler = async (event) => {
   event.preventDefault();
   // Collect values from the login form
-  const email = $("#email-login").val().trim();
+  const email = $("#email-login").val().trim().toLowerCase();
   const password = $("#password-login").val().trim();
   if (email && password) {
     // Send a POST request to the API endpoint
@@ -37,8 +40,8 @@ const loginFormHandler = async (event) => {
 
 const signupFormHandler = async (event) => {
   event.preventDefault();
-  const userName = $("#name-signup").val().trim();
-  const email = $("#email-signup").val().trim();
+  const userName = capitalizeFirstLetter($("#name-signup").val().trim());
+  const email = $("#email-signup").val().trim().toLowerCase();
   const password = $("#password-signup").val().trim();
   const password2 = $("#password-signup2").val().trim();
   if (!userName || !email || !password | !password2) {
