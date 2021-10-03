@@ -2,5 +2,3 @@
 *.js linguist-detectable=true
 *.html linguist-detectable=true
 *.css linguist-detectable=false
-*.handlebars linguist-detectable=false
-shell linguist-detectable=false
