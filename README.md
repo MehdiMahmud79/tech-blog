@@ -86,7 +86,9 @@ or
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![Handlebars](![image](https://user-images.githubusercontent.com/84668631/152062257-ef3f64c8-2ffc-4c6d-ac55-ee9674d3211d.png)
-<img src="https://user-images.githubusercontent.com/84668631/152062257-ef3f64c8-2ffc-4c6d-ac55-ee9674d3211d.png)" alt="drawing" style="width:20px;"/>
+
+<img src="https://user-images.githubusercontent.com/84668631/152062257-ef3f64c8-2ffc-4c6d-ac55-ee9674d3211d.png)" alt="handelbaes" style="width:20px;"/>
+
 ## Websites
 * Github: https://github.com/MehdiMahmud79/tech-blog
 * Live: https://mehdimahmud79.github.io/tech-blog/
